@@ -3,6 +3,10 @@
 ### [2018 NIPS] Context-Aware Synthesis and Placement of Object Instances [→](https://papers.nips.cc/paper/8240-context-aware-synthesis-and-placement-of-object-instances.pdf)
 ### [2018 ECCV] Compositing-aware Image Search [→](https://hszhao.github.io/papers/eccv18_cais.pdf)
 
+| input/output                               | outline                                    |
+| ------------------------------------------ | ------------------------------------------ |
+| ![1551259396389](assets/1551259396389.png) | ![1551259414407](assets/1551259414407.png) |
+
 
 
 ### [2007 SIGGRAPH] Photo Clip Art [→](http://graphics.cs.cmu.edu/projects/photoclipart/lalonde_siggraph_07.pdf)
@@ -12,29 +16,17 @@
 | ![1551257555050](assets/1551257555050.png) | ![1551258553094](assets/1551258553094.png) | ![1551257490736](assets/1551257490736.png) |
 
 - Input: RGB image + category + location + object library + horizon (labeled)
-
 - Output: ordered segments + blending
-
 - Method:
-
   - Matching
-
     - camera orientation: pose = (3D camera height, 2D horizon), from >=2 objects with known 3D height
-
       [Assume: labeled horizon & image plane roughly ⊥ ground & insert on ground & small roll]
-
     - lighting: X2-distance of LAB histogram of (building, sky, ground) 
-
     - local context: sumed-squared-distance of surrounding pixels 
-
     - others...
-
   - Blending
-
     - segmenting --> shade transfer --> blending
-
 - Application: decorating & enrich the scene (e.g. architectural renderings)
-
 - Limitation: won't work indoors... (assumption for camera pose x)
 
 # Jan
