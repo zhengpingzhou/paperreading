@@ -1,6 +1,17 @@
 # Feb
 
 ### [2018 NIPS] Context-Aware Synthesis and Placement of Object Instances [→](https://papers.nips.cc/paper/8240-context-aware-synthesis-and-placement-of-object-instances.pdf)
+
+| input/output                               | where/what                                 |
+| ------------------------------------------ | ------------------------------------------ |
+| ![1551343936010](assets/1551343936010.png) | ![1551344002581](assets/1551344002581.png) |
+| **where**                                  | **what**                                   |
+| ![1551345269111](assets/1551345269111.png) | ![1551345284520](assets/1551345284520.png) |
+
+- Input: semantic segmentation map + category (person/car)
+- Output: 2D bbox + shape outline
+- 
+
 ### [2018 ECCV] Compositing-aware Image Search [→](https://hszhao.github.io/papers/eccv18_cais.pdf)
 
 | input/output                               | outline                                    |
@@ -29,7 +40,7 @@
   - 10 bg/category, 1 box/bg, 100-400 fg/category, 16-140 gt/bg
   - metric: mAP
 
-### [2007 SIGGRAPH] Photo Clip Art [→](http://graphics.cs.cmu.edu/projects/photoclipart/lalonde_siggraph_07.pdf)
+### [2007 SIGGRAPH] Photo Clip Art [→](http://graphics.cs.cmu.edu/projects/photoclipart/)
 
 | UI                                         | outline                                    | camera pose                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
