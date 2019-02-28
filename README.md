@@ -22,7 +22,7 @@
     - camera orientation: pose = (3D camera height, 2D horizon), from >=2 objects with known 3D height
       [Assume: labeled horizon & image plane roughly ⊥ ground & insert on ground & small roll]
     - lighting: X2-distance of LAB histogram of (building, sky, ground) 
-    - local context: sumed-squared-distance of surrounding pixels 
+    - local context: summed-squared-distance of surrounding pixels 
     - others...
   - Blending
     - segmenting --> shade transfer --> blending
