@@ -7,7 +7,27 @@
 | ------------------------------------------ | ------------------------------------------ |
 | ![1551259396389](assets/1551259396389.png) | ![1551259414407](assets/1551259414407.png) |
 
-
+- Input: RGB image + category + location + object library
+- Output: ordered segments (*no background context required at test time*)
+- Method (matching only):
+  - Network:
+    - f1 = MCB(resnet50(bg), embed(word)), f2 = MCB(resnet50(fg), embed(word)), score = |f1 - f2|^2
+    - triplet\_loss = max(0, score\_p - score\_n + a) 
+  - Dataset:
+    - images: MS-COCO/PASCAL VOC/ADE20K
+    - categories (*8): person, car, boat, dog, plant, bottle, chair, painting
+    - Aug1: randomly expand the bbox, change aspect ratio
+    - Aug2: triple extension (+7%)
+      1. semantic context: L2 distance of background context ResNet50 feature
+      2. shape information: IoU of masks
+  - Blending: Poisson blending
+- Baselines:
+  - RealismCNN: rank by realism score of Poisson-blended result
+  - Shape feature: IoU score of center-aligned bboxes
+  - Classification feature: feature from classification (commonly used for image retrieval) 
+- Evaluation:
+  - 10 bg/category, 1 box/bg, 100-400 fg/category, 16-140 gt/bg
+  - metric: mAP
 
 ### [2007 SIGGRAPH] Photo Clip Art [→](http://graphics.cs.cmu.edu/projects/photoclipart/lalonde_siggraph_07.pdf)
 
@@ -19,7 +39,7 @@
 - Output: ordered segments + blending
 - Method:
   - Matching
-    - camera orientation: pose = (3D camera height, 2D horizon), from >=2 objects with known 3D height
+    - camera orientation: pose = (3D camera height, 2D horizon), from >=2 objects with known 3D heights
       [Assume: labeled horizon & image plane roughly ⊥ ground & insert on ground & small roll]
     - lighting: X2-distance of LAB histogram of (building, sky, ground) 
     - local context: summed-squared-distance of surrounding pixels 
@@ -31,9 +51,7 @@
 
 # Jan
 
-## TODO
-
-## 1.14
+## 1.14 TODO
 
 - `P(B, C | I) = P(C | I) P(B | C, I)`
 - 后者：可以在segmentation产生的heatmap上枚举所有包围盒B，取内部heat值最大的B为选取对象（虽然之前的paper不是这样实现的）
