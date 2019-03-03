@@ -7,7 +7,11 @@
 	b. GAN / VAE / ...?
 		i. Location only -- generate a box
 		ii. Location + category -- generate a colored box
-	c. Normal / depth -- incorporate 3D information?
+	c. Feature map
+		i. RGB value
+		ii. Object(part) segmentation
+		iii. Affordance segmentation
+		iv. 3D: Surface normal / depth
 2. Segment 
 	a. Fixed encoder? 
 		i. Test: ResNet50, [local; global]
