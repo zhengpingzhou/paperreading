@@ -1,5 +1,11 @@
 # Feb
 
+```
+03/03 Summary
+1. bbox / shape could be generated with GAN / VAE
+2. segment could be retrieved based on embedding
+```
+
 ### [2018 NIPS] Context-Aware Synthesis and Placement of Object Instances [→](https://papers.nips.cc/paper/8240-context-aware-synthesis-and-placement-of-object-instances.pdf)
 
 | input/output                               | where/what                                 |
