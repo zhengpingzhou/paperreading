@@ -10,7 +10,23 @@
 
 - Input: semantic segmentation map + category (person/car)
 - Output: 2D bbox + shape outline
-- 
+- Method:
+  - *where*:
+    - G: conditional GAN, use STN to generate an affine transformation on a unit bbox, based on input RGB image (`A' = G1(x, z1)`). Input image, output affine transform (bbox) `A'`
+    - D: 
+      1. adversarial: is `image + A'(bbox)` real?
+      2. reconstruction: reconstruct `x` and `z1` from their joint encoding 
+      3. supervised: `A == A'`? `KL(zA||z1)`? is `A'` real?
+  - *what*:
+    - G: conditional GAN, input image+bbox, output shape mask `s`
+    - D: similar to *where*
+  - Final: `x' = x + A'(s)`
+- Baselines:
+  - Directly generate instance at somewhere
+  - First what, then where
+- Evaluation:
+  - User study
+  - Render RGB image from semantic map, then use context-based object detector (YOLOv3) to detect the inserted object, calculate accuracy
 
 ### [2018 ECCV] Compositing-aware Image Search [→](https://hszhao.github.io/papers/eccv18_cais.pdf)
 
@@ -21,7 +37,7 @@
 - Input: RGB image + category + location + object library
 - Output: ordered segments (*no background context required at test time*)
 - Method (matching only):
-  - Network:
+  - Network: 
     - f1 = MCB(resnet50(bg), embed(word)), f2 = MCB(resnet50(fg), embed(word)), score = |f1 - f2|^2
     - triplet\_loss = max(0, score\_p - score\_n + a) 
   - Dataset:
