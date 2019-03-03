@@ -100,7 +100,7 @@
 
 ### [2013 SIGGRAPH] PatchNet: A Patch-based Image Representation for Interactive Library-driven Image Editing [→](https://cg.cs.tsinghua.edu.cn/people/~fanglue/papers/PatchNet/patchNetSmall.pdf)
 
-<img src="assets/1551614154974.png" style="zoom:50%" />
+<img src="assets/1551614154974.png" width="400" />
 
 2 contexts are considered to be matching each other, if their structures are close (measured using pairwise pixel relation count with ROI in 8 directions) && has similar color in LAB space.
 
