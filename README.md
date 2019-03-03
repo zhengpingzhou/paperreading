@@ -102,7 +102,7 @@
 
 <img src="assets/1551614154974.png" style="zoom:50%" />
 
-2 contexts are considered to be matching each other, if their structure are close (measured using pairwise pixel relation count with ROI in 8 directions) && has similar color in LAB space.
+2 contexts are considered to be matching each other, if their structures are close (measured using pairwise pixel relation count with ROI in 8 directions) && has similar color in LAB space.
 
 ### [2007 SIGGRAPH] Photo Clip Art [→](http://graphics.cs.cmu.edu/projects/photoclipart/)
 
