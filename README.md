@@ -98,6 +98,12 @@
   - 10 bg/category, 1 box/bg, 100-400 fg/category, 16-140 gt/bg
   - metric: mAP
 
+### [2013 SIGGRAPH] PatchNet: A Patch-based Image Representation for Interactive Library-driven Image Editing [→](https://cg.cs.tsinghua.edu.cn/people/~fanglue/papers/PatchNet/patchNetSmall.pdf)
+
+<img src="assets/1551614154974.png" style="zoom:50%" />
+
+2 contexts are considered to be matching each other, if their structure are close to each other (measured using pixel relation shape with ROI in 8 directions) && has similar color in LAB space.
+
 ### [2007 SIGGRAPH] Photo Clip Art [→](http://graphics.cs.cmu.edu/projects/photoclipart/)
 
 | UI                                         | outline                                    | camera pose                                |
