@@ -156,7 +156,7 @@
 
 
 
-### [2017 CVPR] Learning to Segment Affordances :star:
+### [2017 ICCVW] Learning to Segment Affordances :star:
 
 > A key observation of this work is that **affordances** tend to pertain to single **parts of objects** rather than objects as a whole.
 
