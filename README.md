@@ -1,3 +1,24 @@
+# March
+
+```
+03/03 TODO
+1. Category & Location
+	a. Probability? --- old method
+	b. GAN / VAE / ...?
+		i. Location only -- generate a box
+		ii. Location + category -- generate a colored box
+	c. Normal / depth -- incorporate 3D information?
+2. Segment 
+	a. Fixed encoder? 
+		i. Test: ResNet50, [local; global]
+			(same for each category)
+	b. Learned encoder? 
+		i. Train: Same as ECCV'18
+			(different for each category)
+		ii. Test: 1) get bbox using old method; 2) Compute embedding and retrieve
+			(old method only generates square box -- use square box to train encoder)
+```
+
 # Feb
 
 ```
