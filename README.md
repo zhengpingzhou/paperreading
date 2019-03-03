@@ -12,15 +12,31 @@
 		ii. Object(part) segmentation
 		iii. Affordance segmentation
 		iv. 3D: Surface normal / depth
+		
 2. Segment 
 	a. Fixed encoder? 
-		i. Test: ResNet50, [local; global]
+		i. Test: ResNet50, local + global
 			(same for each category)
 	b. Learned encoder? 
-		i. Train: Same as ECCV'18
+		i. Train: Same as [ECCV'18 comp-aware search]
 			(different for each category)
 		ii. Test: 1) get bbox using old method; 2) Compute embedding and retrieve
 			(old method only generates square box -- use square box to train encoder)
+			
+3. Baseline
+	a. Category
+		i. bag-of-words
+		ii. sum of affordance score [ICCVW'17 affseg]
+	a. Location
+		i. Discretize & classification: [WACV'18 where and who]
+		ii. GAN & sample: [NIPS'18 context-aware synth]
+		iii. Affordance map --- could not generate best bbox?
+	b. Segment (instance)
+		i. Learned encoder: [ECCV'18 comp-aware search]
+		
+4. Evaluation
+	a. User study
+	b. Detection performance of context-based object detector (e.g. YOLOv3)
 ```
 
 # Feb
@@ -29,6 +45,7 @@
 03/03 Summary
 1. bbox / shape could be generated with GAN / VAE
 2. segment could be retrieved based on embedding
+3. evaluation could be done using detectors on synthetic images
 ```
 
 ### [2018 NIPS] Context-Aware Synthesis and Placement of Object Instances [→](https://papers.nips.cc/paper/8240-context-aware-synthesis-and-placement-of-object-instances.pdf)
