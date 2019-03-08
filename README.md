@@ -1,6 +1,19 @@
 # March
 
 ```
+03/05 TODO
+1. Baseline:
+	a. category -- sum of affordance score
+	b. location -- center of affordance map
+
+2. If could not win it:
+	a. Input -- B, I; Output -- P(B,C|I) = P(B|I)P(C|B,I)
+	b. P(B|I) -- Is it suitable for placing an object?
+	   P(C|B,I) -- What object should we place?
+	c. Learn from YOLOv3's feature map -- context aware
+```
+
+```
 03/03 TODO
 1. Category & Location
 	a. Probability? --- old method
